@@ -1,0 +1,29 @@
+<h2>{{title}}</h2>
+
+<div>
+  <h3>Sarees ({{ sarees.length }})</h3>
+  <ul>
+    <li *ngFor="let saree of sarees">{{ saree.name }}</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Salwars ({{ salwars.length }})</h3>
+  <ul>
+    <li *ngFor="let salwar of salwars">{{ salwar.name }}</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Jewelry ({{ jewelry.length }})</h3>
+  <ul>
+    <li *ngFor="let jewel of jewelry">{{ jewel.name }}</li>
+  </ul>
+</div>
+
+<div>
+  <h3>Dresses ({{ dresses.length }})</h3>
+  <ul>
+    <li *ngFor="let dress of dresses">{{ dress.name }}</li>
+  </ul>
+</div>

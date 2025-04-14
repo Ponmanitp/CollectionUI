@@ -1,0 +1,43 @@
+<div class="home-container">
+  <div class="background-image"></div>
+  <div class="content">
+    <div class="brand-details">
+      <div class="background-image" [ngStyle]="{'background-image': 'url(' + backgroundImage + ')'}"></div>
+      <h1>PIRAI COLLECTIONS</h1>
+      <p>Where tradition meets contemporary elegance. Discover exquisite sarees crafted with passion and heritage.</p>
+    </div>
+
+    <div class="collections-explanation">
+      <h2>Our Exclusive Collections</h2>
+
+      <div class="collection">
+        <div class="collection-image">
+          <img src="/assets/images/silk-sarees.jpeg" alt="Silk Sarees">
+        </div>
+        <div class="collection-details">
+          <h3>Timeless Silks</h3>
+          <p>Indulge in the luxurious feel of pure silk sarees. From vibrant Kanjeevarams to elegant Banarasis,
+            experience the rich heritage woven into every thread.</p>
+          <a routerLink="/collection/silks">Explore Silk Collection</a>
+        </div>
+      </div>
+
+      <div class="collection">
+        <div class="collection-image">
+          <img src="/assets/images/cotton-sarees.jpeg" alt="Cotton Sarees">
+        </div>
+        <div class="collection-details">
+          <h3>Comforting Cottons</h3>
+          <p>Discover our breathable and stylish cotton sarees perfect for everyday elegance. Explore a variety of
+            weaves and prints that offer both comfort and sophistication.</p>
+          <a routerLink="/collection/cottons">Shop Cotton Sarees</a>
+        </div>
+      </div>
+
+      <div class="call-to-action">
+        <h2>Find Your Perfect Saree</h2>
+        <p>Browse our extensive collection and experience the timeless beauty of the saree.</p>
+        <a routerLink="/products" class="shop-now-button">Shop All Sarees</a>
+      </div>
+    </div>
+  </div>
