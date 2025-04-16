@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-categorylist',
@@ -11,6 +11,12 @@ import { RouterModule } from '@angular/router';
 
 
 export class CategoryListComponent {
+  error: string = '';
   title = 'Category List';
+  router = inject(Router);
+
+  onBack() {
+    this.router.navigate(['/Home']);
+  }
 
 }
