@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 class="text-center">{{title}}</h2>
+  <form #form="ngForm" (ngSubmit)="addCategory()" class="mb-3">
+    <div class="mb-3">
+      <label for="categoryName" class="form-label">Category Name</label>
+      <input type="text" id="categoryName" [(ngModel)]="model.CategoryName" name="categoryName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="categoryUrl" class="form-label">Category Url</label>
+      <input id="categoryUrl" [(ngModel)]="model.CategoryUrl" name="categoryUrl" class="form-control" required>
+    </div>
+    <button type="submit" (click)="addCategory()" class="btn btn-primary">Add Category</button>
+    <button type="cancel" (click)="oncancel()" class="btn btn-primary">Cancel</button>
+  </form>
+
+  <p *ngIf="error" class="error-message">{{ error }}</p>
+<router-outlet></router-outlet>
