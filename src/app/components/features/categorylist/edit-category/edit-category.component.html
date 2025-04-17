@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 class="text-center">{{title}}</h2>
+  <ng-container *ngIf="category; else notfound">
+    <form class="mb-3" #form="ngForm" (ngSubmit)="editCategory()">
+      <div class="mb-3">
+        <label for="categoryId" class="form-label">Category Id</label>
+        <input type="text" disabled id="categoryId" value="{{category.categoryId}}" name="categoryId"
+          class="form-control">
+      </div>
+      <div class="mb-3">
+        <label for="categoryName" class="form-label">Category Name</label>
+        <input type="text" id="categoryName" [(ngModel)]="category.categoryName" name="categoryName"
+          class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="categoryUrl" class="form-label">Category Url</label>
+        <input id="categoryUrl" [(ngModel)]="category.categoryUrl" name="categoryUrl" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Save</button>
+      <button type="cancel" (click)="oncancel()" class="btn btn-primary">Cancel</button>
+    </form>
+  </ng-container>
+
+  <ng-template #notfound>
+    <h3 class="text-center">Category not found</h3>
+    <div class="alert alert-warning" role="alert"> Category Not Found!! </div>
+    <button type="cancel" (click)="oncancel()" class="btn btn-primary">Cancel</button>
+  </ng-template>
+
+  <p *ngIf="error" class="error-message">{{ error }}</p>
+  <router-outlet></router-outlet>

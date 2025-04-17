@@ -12,11 +12,13 @@ import { AddCategoryComponent } from './components/features/categorylist/add-cat
 import { CategoryService } from './components/features/categorylist/services/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
+import { EditCategoryComponent } from './components/features/categorylist/edit-category/edit-category.component';
 
 export const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'Category-List', component: CategoryListComponent },
   { path: 'Category-List/Add-Category', component: AddCategoryComponent },
+  { path: 'Category-List/Edit-Category/:categoryName', component: EditCategoryComponent },
   { path: 'Collections', component: CollectionsComponent },
   { path: 'Collections/Sarees', component: SareesComponent },
   { path: 'Collections/Dresses', component: DressesComponent },
@@ -32,6 +34,7 @@ export const routes: Routes = [
     NavbarComponent,
     CategoryListComponent,
     AddCategoryComponent,
+    EditCategoryComponent,
     CollectionsComponent,
     SareesComponent,
     SalwarsComponent,
