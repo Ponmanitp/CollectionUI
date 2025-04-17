@@ -1,9 +1,30 @@
-<h2>{{title}}</h2>
-  <div>
+<h2 class="text-center">{{title}}</h2>
+<div class="container">
+  <div class="d-flex justify-content-between mb-3">
     <button class=" btn btn-primary" routerLink="/Category-List/Add-Category">Add Category</button>
-    <br>
-    <br>
-    <button class=" btn btn-primary" (click)="onBack()">Back</button>
+  </div>
+  <ng-container *ngIf="categoryList$ | async as categoryList">
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th>Category Id</th>
+          <th>Category Name</th>
+          <th>Category URL</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categoryList">
+          <td>{{ category.categoryId }}</td>
+          <td>{{ category.categoryName }}</td>
+          <td>{{ category.categoryUrl }}</td>
+          <div> <button type="submit" class="btn btn-primary"
+              [routerLink]="['/Category-List/Edit-Category', category.categoryName]"> Edit </button>
+          </div>
+        </tr>
+      </tbody>
+    </table>
+  </ng-container>
   </div>
 
 <p *ngIf="error" class="error-message">{{ error }}</p>
