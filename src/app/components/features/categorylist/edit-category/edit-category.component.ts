@@ -11,7 +11,7 @@ import { CategoryService } from '../services/category.service';
   selector: 'app-edit-category',
   imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './edit-category.component.html',
-  styleUrl: './edit-category.component.css'
+  styleUrl: './edit-category.component.css',
 })
 export class EditCategoryComponent implements OnInit, OnDestroy {
   title = 'Edit Category';
@@ -30,29 +30,47 @@ export class EditCategoryComponent implements OnInit, OnDestroy {
       next: (params) => {
         this.categoryName = params.get('categoryName');
         if (this.categoryName) {
-          this.categoryService.getCategoryByName(this.categoryName)
-            .subscribe({
-              next: (response) => { this.category = response; },
-              error: () => { this.error = 'Failed to load category.'; }
-            })
+          this.categoryService.getCategoryByName(this.categoryName).subscribe({
+            next: (response) => {
+              this.category = response;
+            },
+            error: () => {
+              this.error = 'Failed to load category.';
+            },
+          });
         }
-      }
+      },
     });
   }
 
-  editCategory(): void{
+  editCategory(): void {
     if (this.category) {
-      this.categoryService.editCategory(this.category)
-        .subscribe({
-          next: () => { this.router.navigate(['/Category-List']); },
-          error: () => { this.error = 'Failed to edit category.'; }
-        });
+      this.categoryService.editCategory(this.category).subscribe({
+        next: () => {
+          this.router.navigate(['/Category-List']);
+        },
+        error: () => {
+          this.error = 'Failed to edit category.';
+        },
+      });
+    }
+  }
+
+  deleteCategory(): void {
+    if (this.categoryName) {
+      this.categoryService.deleteCategory(this.categoryName!).subscribe({
+        next: () => {
+          this.router.navigate(['/Category-List']);
+        },
+        error: () => {
+          this.error = 'Failed to delete category.';
+        },
+      });
     }
   }
 
   oncancel() {
     this.router.navigate(['/Category-List']);
-
   }
 
   ngOnDestroy(): void {

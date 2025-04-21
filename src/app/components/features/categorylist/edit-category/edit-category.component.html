@@ -17,7 +17,8 @@
         <input id="categoryUrl" [(ngModel)]="category.categoryUrl" name="categoryUrl" class="form-control" required>
       </div>
       <button type="submit" class="btn btn-primary">Save</button>
-      <button type="cancel" (click)="oncancel()" class="btn btn-primary">Cancel</button>
+      <button type="button" (click)="deleteCategory()" class="btn btn-danger ms-3">Delete</button>
+      <button type="cancel" (click)="oncancel()" class="btn btn-primary ms-3">Cancel</button>
     </form>
   </ng-container>
 

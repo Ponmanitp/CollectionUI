@@ -3,7 +3,7 @@
   <div class="d-flex justify-content-between mb-3">
     <button class=" btn btn-primary" routerLink="/Category-List/Add-Category">Add Category</button>
   </div>
-  <ng-container *ngIf="categoryList$ | async as categoryList">
+  <ng-container *ngIf="(categoryList$ | async) as categoryList">
     <table class="table table-bordered mt-3">
       <thead>
         <tr>
@@ -18,14 +18,15 @@
           <td>{{ category.categoryId }}</td>
           <td>{{ category.categoryName }}</td>
           <td>{{ category.categoryUrl }}</td>
-          <div> <button type="submit" class="btn btn-primary"
-              [routerLink]="['/Category-List/Edit-Category', category.categoryName]"> Edit </button>
+          <div>
+            <button type="submit" class="btn btn-primary" [routerLink]="['/Category-List/Edit-Category', category.categoryName]">
+              Edit</button>
           </div>
         </tr>
       </tbody>
     </table>
   </ng-container>
-  </div>
+</div>
 
 <p *ngIf="error" class="error-message">{{ error }}</p>
 <router-outlet></router-outlet>

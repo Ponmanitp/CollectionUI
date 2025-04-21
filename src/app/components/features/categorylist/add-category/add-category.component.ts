@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { AddCategoryRequest } from '../models/add-category-request.model';
+import { CategoryRequest } from '../models/category-request.model';
 import { CategoryService } from '../services/category.service';
 import { Subscription } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class AddCategoryComponent implements OnDestroy {
   title = 'Add Category';
   description = 'Add a new category to the list of categories.';
   error: string = '';
-  model: AddCategoryRequest;
+  model: CategoryRequest;
 
   router = inject(Router);
   private addCategorySubscription?: Subscription;
