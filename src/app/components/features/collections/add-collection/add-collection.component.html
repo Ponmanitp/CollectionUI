@@ -1,0 +1,45 @@
+<h2 class="text-center">{{title}}</h2>
+
+<form ngForm="ngForm" (ngSubmit)="addDress()" class="mb-3">
+  <div class="container">
+    <div class="mb-3">
+      <label for="ItemName" class="form-label">Item Name</label>
+      <input type="text" id="ItemName" [(ngModel)]="model.ItemName" name="ItemName" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="Description" class="form-label">Description</label>
+      <textarea id="Description" [(ngModel)]="model.Description" name="Description" class="form-control"
+        required></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="ImageUrl" class="form-label">ImageUrl</label>
+      <input id="ImageUrl" [(ngModel)]="model.ImageUrl" name="ImageUrl" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="Category" class="form-label">Category</label>
+      <select id="Category" [(ngModel)]="model.Category" name="Category" class="form-select" required>
+        <option *ngFor="let category of category" [value]="category.categoryName"> {{ category.categoryName }} </option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="Price" class="form-label">Price</label>
+      <input id="Price" [(ngModel)]="model.Price" name="Price" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="Quantity" class="form-label">Quantity</label>
+      <input type="number" id="Quantity" [(ngModel)]="model.Quantity" name="Quantity" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="PostedDate" class="form-label">Posted Date</label>
+      <input type="date" id="PostedDate" [(ngModel)]="model.PostedDate" name="PostedDate" class="form-control" required>
+    </div>
+  </div>
+
+  <div class="container">
+    <button type="submit" class="btn btn-primary">Add Collection</button>
+    <button type="cancel" (click)="onCancel()" class="btn btn-primary ms-3">Cancel</button>
+  </div>
+  </form>
+
+<p *ngIf="error" class="error-message">{{ error }}</p>
+<router-outlet></router-outlet>

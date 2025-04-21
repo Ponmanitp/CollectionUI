@@ -14,15 +14,19 @@
           <a class="nav-link active" aria-current="page" routerLink="Category-List">Category List</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="Collections" role="button" data-bs-toggle="dropdown"
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Collections
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['Collections/Dresses']">Dresses</a></li>
+            <li><a class="dropdown-item" [routerLink]="['Collections/Jewelry']">Jewelry</a></li>
+            <li><a class="dropdown-item" [routerLink]="['Collections/Salwars']">Salwars</a></li>
             <li><a class="dropdown-item" [routerLink]="['Collections/Sarees']">Sarees</a></li>
-            <li><a class="dropdown-item" routerLink="Collections/Salwars">Salwars</a></li>
-            <li><a class="dropdown-item" routerLink="Collections/Jewelry">Jewelry</a></li>
-            <li><a class="dropdown-item" routerLink="Collections/Dresses">Dresses</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" [routerLink]="['Category-List']">Others</a></li>
           </ul>
         </li>
       </ul>

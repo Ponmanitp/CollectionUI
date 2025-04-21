@@ -13,18 +13,23 @@ import { CategoryService } from './components/features/categorylist/services/cat
 import { BrowserModule } from '@angular/platform-browser';
 import { provideHttpClient } from '@angular/common/http';
 import { EditCategoryComponent } from './components/features/categorylist/edit-category/edit-category.component';
+import { AddCollectionComponent } from './components/features/collections/add-collection/add-collection.component';
 
 export const routes: Routes = [
   { path: 'Home', component: HomeComponent },
   { path: 'Category-List', component: CategoryListComponent },
   { path: 'Category-List/Add-Category', component: AddCategoryComponent },
-  { path: 'Category-List/Edit-Category/:categoryName', component: EditCategoryComponent },
+  {
+    path: 'Category-List/Edit-Category/:categoryName',
+    component: EditCategoryComponent,
+  },
   { path: 'Collections', component: CollectionsComponent },
   { path: 'Collections/Sarees', component: SareesComponent },
   { path: 'Collections/Dresses', component: DressesComponent },
   { path: 'Collections/Salwars', component: SalwarsComponent },
   { path: 'Collections/Jewelry', component: JewelryComponent },
-  { path: '**', redirectTo: '/Home', pathMatch: 'full' }
+  { path: 'Collections/Dresses/Add', component: AddCollectionComponent },
+  { path: '**', redirectTo: '/Home', pathMatch: 'full' },
 ];
 
 @NgModule({
