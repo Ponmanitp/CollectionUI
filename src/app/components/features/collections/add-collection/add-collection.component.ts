@@ -29,7 +29,7 @@ export class AddCollectionComponent {
       this.model = {
         ItemId: '',
         ItemName: '',
-        ImageUrl: '',
+        ImagePath: '',
         Description: '',
         Category: {} as Category,
         Price: 0,
